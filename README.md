@@ -14,10 +14,8 @@ A text editor that runs in the browser and meets PWA criteria.
 Click on Heroku link: https://pwa-challengejmares.herokuapp.com/ and click install at the top
 
 ## Usage
-    
-    ![website deno](Assets/00-demo.gif)
-    
 
+![Demo](./Assets/00-demo.gif)
 ## License
 
 This project is covered under the MIT license

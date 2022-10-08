@@ -10,7 +10,10 @@ module.exports = () => {
     mode: 'development',
     entry: {
       main: './src/js/index.js',
-      install: './src/js/install.js'
+      install: './src/js/install.js',
+      database: './src/js/database.js',
+      editor: './src/js/editor.js',
+      header: './src/js/header.js',
     },
     output: {
       filename: '[name].bundle.js',
@@ -18,17 +21,17 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({ //will create a index.html file in dists folder using template
-        title: 'Production html file',
+        title: 'JATE',
         template: './index.html',
       }),
       // creates a manifest.json that can bring the app outside of the browser
       new WebpackPwaManifest({
         name: "PWA TEXT EDITOR",
+        inject : true ,
         short_name: "JATE",
         description: "Just Another Text Editor!",
         background_color: "#fca311",
         theme_color: "#fca311",
-        crossorigin: 'use-credentials',
         start_url: '/',
         publicPath: '/',
         fingerprints: false,
@@ -41,7 +44,7 @@ module.exports = () => {
       }),
       new InjectManifest({ //will create a service worker based on the "schema" for more control. 
         swSrc: './src-sw.js',
-        swDest: 'service-worker.js'
+        swDest: 'src-sw.js'
       }),
       
     ],
